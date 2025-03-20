@@ -10,4 +10,13 @@
   enableMan = true;
   viAlias = true;
   vimAlias = true;
+
+  performance = {
+    byteCompileLua = {
+      enable = true;
+      nvimRuntime = true;
+      configs = true;
+      plugins = true;
+    };
+  };
 }
