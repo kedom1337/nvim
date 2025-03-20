@@ -9,9 +9,11 @@
     ./snacks.nix
   ];
 
-  plugins.ts-autotag.enable = true;
-  plugins.ts-comments.enable = true;
-  plugins.dressing.enable = true;
-  plugins.fidget.enable = true;
-  plugins.gitsigns.enable = true;
+  plugins = {
+    ts-autotag.enable = true;
+    ts-comments.enable = true;
+    dressing.enable = true;
+    fidget.enable = true;
+    gitsigns.enable = true;
+  };
 }
