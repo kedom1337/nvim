@@ -4,8 +4,7 @@
     ./core/keymaps.nix
     ./core/options.nix
 
-    ./plugins/fzf.nix
-    ./plugins/treesitter.nix
+    ./plugins
   ];
 
   enableMan = true;
