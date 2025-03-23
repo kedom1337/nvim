@@ -1,4 +1,15 @@
 {
+  keymaps = [
+    {
+      mode = "n";
+      key = "<leader>i";
+      action.__raw = ''
+        vim.diagnostic.open_float
+      '';
+      options.desc = "Show diagnostics under cursor";
+    }
+  ];
+
   plugins.lsp = {
     enable = true;
     servers = {

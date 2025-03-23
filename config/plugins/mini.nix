@@ -3,13 +3,11 @@
     {
       mode = "n";
       key = "<leader>e";
-      action = {
-        __raw = ''
-          function()
-            MiniFiles.open()
-          end
-        '';
-      };
+      action.__raw = ''
+        function()
+          MiniFiles.open()
+        end
+      '';
       options.desc = "Open file explorer";
     }
   ];

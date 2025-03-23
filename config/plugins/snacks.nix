@@ -6,13 +6,11 @@
         "t"
       ];
       key = "<a-i>";
-      action = {
-        __raw = ''
-          function()
-            Snacks.terminal.toggle("fish")
-          end
-        '';
-      };
+      action.__raw = ''
+        function()
+          Snacks.terminal.toggle("fish")
+        end
+      '';
       options.desc = "Toggle floating terminal";
     }
   ];

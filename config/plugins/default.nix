@@ -7,6 +7,7 @@
     ./treesitter.nix
     ./copilot.nix
     ./snacks.nix
+    ./conform.nix
   ];
 
   plugins = {
