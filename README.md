@@ -2,6 +2,8 @@
 
 Personal neovim configuration made with Nix and [nixvim](https://github.com/nix-community/nixvim).
 
+[![Build status](https://github.com/kedom1337/nvim/workflows/ci/badge.svg)](https://github.com/kedom1337/nvim/actions)
+
 ## Usage
 
 ### 1. Running the Configuration
