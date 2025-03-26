@@ -8,7 +8,8 @@
     ./copilot.nix
     ./snacks.nix
     ./conform.nix
-    ./codecompanion.nix
+    ./schemastore.nix
+    ./avante.nix
   ];
 
   plugins = {
@@ -18,5 +19,6 @@
     fidget.enable = true;
     gitsigns.enable = true;
     web-devicons.enable = true;
+    render-markdown.enable = true;
   };
 }
