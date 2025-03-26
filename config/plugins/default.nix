@@ -10,6 +10,7 @@
     ./conform.nix
     ./schemastore.nix
     ./avante.nix
+    ./markdown.nix
   ];
 
   plugins = {
@@ -19,6 +20,5 @@
     fidget.enable = true;
     gitsigns.enable = true;
     web-devicons.enable = true;
-    render-markdown.enable = true;
   };
 }
