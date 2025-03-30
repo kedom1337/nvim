@@ -22,7 +22,6 @@
 
     laststatus = 3;
     showmode = false;
-    winborder = "rounded";
 
     wrap = false;
     scrolloff = 10;

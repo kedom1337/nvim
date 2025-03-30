@@ -12,12 +12,12 @@
     ./avante.nix
     ./markdown.nix
     ./dap.nix
-    ./highlight.nix
   ];
 
   plugins = {
     ts-autotag.enable = true;
     fidget.enable = true;
     gitsigns.enable = true;
+    highlight-colors.enable = true;
   };
 }
