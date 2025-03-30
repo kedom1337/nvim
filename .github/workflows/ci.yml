@@ -16,7 +16,7 @@ jobs:
           nix_path: nixpkgs=channel:nixos-unstable
 
       - name: Install packages
-        run: nix-shell -p statix nixfmt-rfc-style treefmt
+        run: nix-env -i statix nixfmt-unstable treefmt -f '<nixpkgs>'
 
       - name: Run statix linter
         run: statix check
