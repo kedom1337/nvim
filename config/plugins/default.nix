@@ -17,7 +17,6 @@
 
   plugins = {
     ts-autotag.enable = true;
-    ts-comments.enable = true;
     dressing.enable = true;
     fidget.enable = true;
     gitsigns.enable = true;
