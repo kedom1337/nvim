@@ -14,6 +14,11 @@
       neovim-nightly,
       ...
     }@inputs:
+    let
+      nvimConfig = {
+        useNightly = false;
+      };
+    in
     flake-parts.lib.mkFlake { inherit inputs; } {
       systems = [
         "x86_64-linux"
@@ -22,11 +27,11 @@
         "aarch64-darwin"
       ];
       perSystem =
-        { system, ... }:
+        { lib, system, ... }:
         let
+          overlays = lib.optional nvimConfig.useNightly [ neovim-nightly.overlays.default ];
           pkgs = import nixpkgs {
-            inherit system;
-            overlays = [ neovim-nightly.overlays.default ];
+            inherit system overlays;
           };
           nixvimLib = nixvim.lib.${system};
           nixvim' = nixvim.legacyPackages.${system};
