@@ -11,6 +11,7 @@
     ./schemastore.nix
     ./avante.nix
     ./markdown.nix
+    ./dap.nix
   ];
 
   plugins = {

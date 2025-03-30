@@ -25,6 +25,9 @@
         windows.preview = true;
       };
       jump2d = {
+        spotter.__raw = ''
+          require('mini.jump2d').builtin_opts.word_start.spotter
+        '';
         allowed_lines.cursor_at = false;
         view.n_steps_ahead = 2;
         silent = true;

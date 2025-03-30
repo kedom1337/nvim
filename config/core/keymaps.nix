@@ -14,17 +14,13 @@
       mode = "n";
       key = "<leader>w";
       action = "<cmd>w!<cr>";
-      options = {
-        desc = "Write buffer";
-      };
+      options.desc = "Write buffer";
     }
     {
       mode = "n";
       key = "<leader>q";
       action = "<cmd>q<cr>";
-      options = {
-        desc = "Quit buffer";
-      };
+      options.desc = "Quit buffer";
     }
     {
       mode = "n";
@@ -69,9 +65,7 @@
       ];
       key = "<esc>";
       action = "<cmd>noh<cr><esc>";
-      options = {
-        desc = "Clear search highlight";
-      };
+      options.desc = "Clear search highlight";
     }
   ];
 }
