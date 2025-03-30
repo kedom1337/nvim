@@ -46,7 +46,7 @@
 # Env $TREEFMT_WALK
 # walk = "filesystem"
 
-[formatter.mylanguage]
+[formatter.nix]
 # Command to execute
 command = "nixfmt"
 # Command-line arguments for the command
