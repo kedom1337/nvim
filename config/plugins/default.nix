@@ -12,6 +12,7 @@
     ./avante.nix
     ./markdown.nix
     ./dap.nix
+    ./highlight.nix
   ];
 
   plugins = {
