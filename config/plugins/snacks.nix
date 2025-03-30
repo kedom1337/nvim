@@ -13,12 +13,24 @@
       '';
       options.desc = "Toggle floating terminal";
     }
+    {
+      mode = "n";
+      key = "<leader>z";
+      action.__raw = ''
+        function()
+          Snacks.zen.zen()
+        end
+      '';
+      options.desc = "Toggle zen mode";
+    }
   ];
 
   plugins.snacks = {
     enable = true;
     settings = {
       bigfile.enabled = true;
+      input.enabled = true;
+      zen.enabled = true;
     };
   };
 }

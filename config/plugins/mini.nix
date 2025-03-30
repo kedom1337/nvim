@@ -20,6 +20,7 @@
       splitjoin = { };
       move = { };
       statusline = { };
+      icons = { };
       files = {
         options.use_as_default_explorer = false;
         windows.preview = true;
