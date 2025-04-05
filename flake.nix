@@ -7,13 +7,7 @@
     neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
   };
   outputs =
-    {
-      nixpkgs,
-      nixvim,
-      flake-parts,
-      neovim-nightly,
-      ...
-    }@inputs:
+    { nixvim, flake-parts, ... }@inputs:
     let
       nvimConfig = {
         useNightly = false;
@@ -26,18 +20,18 @@
         "x86_64-darwin"
         "aarch64-darwin"
       ];
+
       perSystem =
-        { lib, system, ... }:
+        { pkgs, system, ... }:
         let
-          overlays = lib.optional nvimConfig.useNightly [ neovim-nightly.overlays.default ];
-          pkgs = import nixpkgs {
-            inherit system overlays;
-          };
           nixvimLib = nixvim.lib.${system};
           nixvim' = nixvim.legacyPackages.${system};
           nixvimModule = {
-            inherit system pkgs;
+            inherit system;
             module = import ./config;
+            extraSpecialArgs = {
+              inherit inputs nvimConfig;
+            };
           };
           nvim = nixvim'.makeNixvimWithModule nixvimModule;
         in
