@@ -16,6 +16,7 @@
       nixd.enable = true;
       jsonls.enable = true;
       yamlls.enable = true;
+      tailwindcss.enable = true;
       vtsls = {
         enable = true;
         extraOptions = {
