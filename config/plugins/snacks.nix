@@ -30,7 +30,9 @@
     settings = {
       bigfile.enabled = true;
       input.enabled = true;
-      zen.enabled = true;
+      zen.toggles = {
+        dim = false;
+      };
     };
   };
 }
