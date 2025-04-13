@@ -17,6 +17,7 @@
       jsonls.enable = true;
       yamlls.enable = true;
       tailwindcss.enable = true;
+      eslint.enable = true;
       vtsls = {
         enable = true;
         extraOptions = {

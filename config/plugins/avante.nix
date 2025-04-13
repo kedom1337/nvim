@@ -2,7 +2,7 @@
   keymaps = [
     {
       mode = "n";
-      key = "<leader>ac";
+      key = "<leader>aC";
       action = ":AvanteClear<cr>";
       options.desc = "avante: clear chat history";
     }
