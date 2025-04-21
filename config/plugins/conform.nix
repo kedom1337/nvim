@@ -27,6 +27,8 @@
         javascript = [ "prettierd" ];
         typescript = [ "prettierd" ];
         typescriptreact = [ "prettierd" ];
+        astro = [ "prettierd" ];
+        json = [ "prettierd" ];
         nix = [ "nixfmt" ];
       };
       format_on_save.__raw = ''
