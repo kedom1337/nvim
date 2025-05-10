@@ -71,7 +71,11 @@
       };
       picker = {
         win.input.keys.__raw = ''
-          { ["<Esc>"] = { "close", mode = { "n", "i" } } }
+          {
+            ["<Esc>"] = { "close", mode = { "n", "i" } },
+            ["<c-l>"] = { "history_forward", mode = { "i", "n" } },
+            ["<C-h>"] = { "history_back", mode = { "i", "n" } }
+          }
         '';
       };
     };
