@@ -16,7 +16,6 @@
   plugins = {
     ts-autotag.enable = true;
     fidget.enable = true;
-    gitsigns.enable = true;
     highlight-colors.enable = true;
     web-devicons.enable = true;
   };

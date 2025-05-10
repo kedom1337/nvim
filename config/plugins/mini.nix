@@ -20,7 +20,9 @@
       splitjoin = { };
       move = { };
       statusline = { };
-      diff = { };
+      diff = {
+        view.style = "sign";
+      };
       files = {
         windows.preview = true;
         options.use_as_default_explorer = false;
