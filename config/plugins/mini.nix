@@ -20,17 +20,18 @@
       splitjoin = { };
       move = { };
       statusline = { };
+      diff = { };
       files = {
-        options.use_as_default_explorer = false;
         windows.preview = true;
+        options.use_as_default_explorer = false;
       };
       jump2d = {
+        silent = true;
+        allowed_lines.cursor_at = false;
+        view.n_steps_ahead = 2;
         spotter.__raw = ''
           require('mini.jump2d').builtin_opts.word_start.spotter
         '';
-        allowed_lines.cursor_at = false;
-        view.n_steps_ahead = 2;
-        silent = true;
       };
       ai = {
         silent = true;

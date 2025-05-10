@@ -7,7 +7,7 @@
       options.desc = "codecompanion: Toggle chat";
     }
     {
-      mode = "n";
+      mode = "v";
       key = "<leader>ai";
       action = ":CodeCompanion<cr>";
       options.desc = "codecompanion: Open inline assistant";
@@ -22,5 +22,11 @@
 
   plugins.codecompanion = {
     enable = true;
+    settings = {
+      display = {
+        action_palette.provider = "snacks";
+        chat.window.opts.number = false;
+      };
+    };
   };
 }
