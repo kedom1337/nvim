@@ -1,7 +1,6 @@
 {
   imports = [
     ./blink.nix
-    ./fzf.nix
     ./lsp.nix
     ./mini.nix
     ./treesitter.nix
@@ -9,7 +8,6 @@
     ./snacks.nix
     ./conform.nix
     ./schemastore.nix
-    ./avante.nix
     ./markdown.nix
     ./dap.nix
     ./codecompanion.nix

@@ -7,21 +7,57 @@
       ];
       key = "<a-i>";
       action.__raw = ''
-        function()
-          Snacks.terminal.toggle("fish")
-        end
+        function() Snacks.terminal.toggle("fish") end
       '';
-      options.desc = "Toggle floating terminal";
+      options.desc = "snacks: Toggle floating terminal";
     }
     {
       mode = "n";
       key = "<leader>z";
       action.__raw = ''
-        function()
-          Snacks.zen.zen()
-        end
+        function() Snacks.zen.zen() end
       '';
-      options.desc = "Toggle zen mode";
+      options.desc = "snacks: Toggle zen mode";
+    }
+    {
+      mode = "n";
+      key = "<leader>f";
+      action.__raw = ''
+        function() Snacks.picker.smart() end
+      '';
+      options.desc = "snacks: Pick files";
+    }
+    {
+      mode = "n";
+      key = "<leader>g";
+      action.__raw = ''
+        function() Snacks.picker.grep() end
+      '';
+      options.desc = "snacks: Grep search";
+    }
+    {
+      mode = "n";
+      key = "<leader>k";
+      action.__raw = ''
+        function() Snacks.picker.keymaps() end
+      '';
+      options.desc = "snacks: Pick keymaps";
+    }
+    {
+      mode = "n";
+      key = "<leader>p";
+      action.__raw = ''
+        function() Snacks.picker.projects() end
+      '';
+      options.desc = "snacks: Pick projects";
+    }
+    {
+      mode = "n";
+      key = "<leader>s";
+      action.__raw = ''
+        function() Snacks.picker.lsp_workspace_symbols() end
+      '';
+      options.desc = "snacks: Pick LSP symbols";
     }
   ];
 
@@ -30,8 +66,9 @@
     settings = {
       bigfile.enabled = true;
       input.enabled = true;
-      zen.toggles = {
-        dim = false;
+      picker.enabled = true;
+      zen = {
+        toggles.dim = false;
       };
     };
   };

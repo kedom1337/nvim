@@ -8,7 +8,7 @@
           MiniFiles.open()
         end
       '';
-      options.desc = "Open file explorer";
+      options.desc = "mini: Open file explorer";
     }
   ];
 

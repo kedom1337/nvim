@@ -4,37 +4,37 @@
       mode = "n";
       key = "<leader>db";
       action = ":DapToggleBreakpoint<cr>";
-      options.desc = "Toggle Breakpoint";
+      options.desc = "dap: Toggle Breakpoint";
     }
     {
       mode = "n";
       key = "<leader>dc";
       action = ":DapContinue<cr>";
-      options.desc = "Continue";
+      options.desc = "dap: Continue";
     }
     {
       mode = "n";
       key = "<leader>do";
       action = ":DapStepOver<cr>";
-      options.desc = "Step Over";
+      options.desc = "dap: Step Over";
     }
     {
       mode = "n";
       key = "<leader>di";
       action = ":DapStepInto<cr>";
-      options.desc = "Step into";
+      options.desc = "dap: Step into";
     }
     {
       mode = "n";
       key = "<leader>dO";
       action = ":DapStepOut<cr>";
-      options.desc = "Step Out";
+      options.desc = "dap: Step Out";
     }
     {
       mode = "n";
       key = "<leader>dt";
       action = ":DapTerminate<cr>";
-      options.desc = "Terminate";
+      options.desc = "dap: Terminate";
     }
     {
       mode = "n";
@@ -44,28 +44,12 @@
           require("dapui").toggle()
         end
       '';
-      options.desc = "Dap UI";
+      options.desc = "dap: Dap UI";
     }
   ];
 
   plugins = {
-    dap = {
-      enable = true;
-      signs = {
-        dapBreakpoint = {
-          text = "●";
-          texthl = "DapBreakpoint";
-        };
-        dapBreakpointCondition = {
-          text = "●";
-          texthl = "DapBreakpointCondition";
-        };
-        dapLogPoint = {
-          text = "◆";
-          texthl = "DapLogPoint";
-        };
-      };
-    };
+    dap.enable = true;
     dap-ui.enable = true;
     dap-virtual-text.enable = true;
   };

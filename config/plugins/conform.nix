@@ -8,7 +8,7 @@
           require("conform").format()
         end
       '';
-      options.desc = "Format current buffer";
+      options.desc = "conform: Format current buffer";
     }
   ];
 

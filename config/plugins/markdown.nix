@@ -4,8 +4,7 @@
     settings = {
       file_types = [
         "markdown"
-        "Avante"
-        "AvanteInput"
+        "codecompanion"
       ];
     };
   };
