@@ -20,9 +20,10 @@
       eslint.enable = true;
       vtsls = {
         enable = true;
-        extraOptions = {
+        settings = {
           typescript.tsserver.maxTsServerMemory = 12288;
-          experimental.completion.entriesLimit = 3;
+          vtsls.experimental.completion.enableServerSideFuzzyMatch = true;
+          vtsls.experimental.completion.entriesLimit = 3;
         };
       };
     };

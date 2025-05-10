@@ -12,6 +12,7 @@
     ./avante.nix
     ./markdown.nix
     ./dap.nix
+    ./codecompanion.nix
   ];
 
   plugins = {
@@ -19,5 +20,6 @@
     fidget.enable = true;
     gitsigns.enable = true;
     highlight-colors.enable = true;
+    web-devicons.enable = true;
   };
 }

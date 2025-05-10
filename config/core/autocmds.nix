@@ -96,6 +96,7 @@
               end)
 
               MiniFiles.set_target_window(new_target)
+              MiniFiles.go_in()
             end
 
             local desc = "Split " .. direction

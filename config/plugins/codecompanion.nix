@@ -1,0 +1,5 @@
+{
+  plugins.codecompanion = {
+    enable = true;
+  };
+}

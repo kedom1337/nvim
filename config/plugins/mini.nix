@@ -20,7 +20,6 @@
       splitjoin = { };
       move = { };
       statusline = { };
-      icons = { };
       files = {
         options.use_as_default_explorer = false;
         windows.preview = true;
@@ -32,6 +31,23 @@
         allowed_lines.cursor_at = false;
         view.n_steps_ahead = 2;
         silent = true;
+      };
+      ai = {
+        silent = true;
+        custom_textobjects = {
+          f.__raw = ''
+            require('mini.ai').gen_spec.treesitter({
+              a = { "@function.outer" };
+              i = { "@function.inner" };
+            })
+          '';
+          o.__raw = ''
+            require('mini.ai').gen_spec.treesitter({
+              a = { '@conditional.outer', '@loop.outer' },
+              i = { '@conditional.inner', '@loop.inner' },
+            })
+          '';
+        };
       };
     };
   };
