@@ -66,9 +66,13 @@
     settings = {
       bigfile.enabled = true;
       input.enabled = true;
-      picker.enabled = true;
       zen = {
         toggles.dim = false;
+      };
+      picker = {
+        win.input.keys.__raw = ''
+          { ["<Esc>"] = { "close", mode = { "n", "i" } } }
+        '';
       };
     };
   };
