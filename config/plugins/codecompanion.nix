@@ -27,6 +27,17 @@
         action_palette.provider = "snacks";
         chat.window.opts.number = false;
       };
+      adapters.copilot.__raw = ''
+        function()
+          return require("codecompanion.adapters").extend("copilot", {
+            schema = {
+              model = {
+                default = "claude-3.7-sonnet",
+              },
+            },
+          })
+        end
+      '';
     };
   };
 }
