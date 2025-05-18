@@ -24,11 +24,11 @@
         lua = [ "stylua" ];
         python = [ "black" ];
         rust = [ "rustfmt" ];
-        javascript = [ "prettierd" ];
-        typescript = [ "prettierd" ];
-        typescriptreact = [ "prettierd" ];
-        astro = [ "prettierd" ];
-        json = [ "prettierd" ];
+        javascript = [ "prettier" ];
+        typescript = [ "prettier" ];
+        typescriptreact = [ "prettier" ];
+        astro = [ "prettier" ];
+        json = [ "prettier" ];
         nix = [ "nixfmt" ];
       };
       format_on_save.__raw = ''
