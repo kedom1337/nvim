@@ -4,8 +4,11 @@
   withPython3 = false;
   withRuby = false;
 
-  colorschemes.oxocarbon.enable = true;
   clipboard.providers.xclip.enable = true;
+  colorschemes.nightfox = {
+    enable = true;
+    flavor = "carbonfox";
+  };
 
   globals = {
     mapleader = " ";
