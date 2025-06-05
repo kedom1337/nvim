@@ -5,10 +5,20 @@
       key = "<leader>e";
       action.__raw = ''
         function()
-          MiniFiles.open()
+          MiniFiles.open(vim.api.nvim_buf_get_name(0))
         end
       '';
       options.desc = "mini: Open file explorer";
+    }
+    {
+      mode = "n";
+      key = "<leader>re";
+      action.__raw = ''
+        function()
+          MiniFiles.open()
+        end
+      '';
+      options.desc = "mini: Open file explorer at root";
     }
   ];
 
