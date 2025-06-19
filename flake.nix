@@ -11,6 +11,7 @@
       nixpkgs,
       nixvim,
       flake-utils,
+      neovim-nightly,
       ...
     }@inputs:
     flake-utils.lib.eachDefaultSystem (
@@ -20,7 +21,12 @@
           useNightly = false;
         };
 
-        pkgs = nixpkgs.legacyPackages.${system};
+        pkgs = import nixpkgs {
+          inherit system;
+          overlays = nixpkgs.lib.optional nvimConfig.useNightly [
+            neovim-nightly.overlays.default
+          ];
+        };
         nixvimLib = nixvim.lib.${system};
         nixvim' = nixvim.legacyPackages.${system};
         nixvimModule = {
