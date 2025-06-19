@@ -29,7 +29,7 @@
         typescriptreact = [ "prettier" ];
         astro = [ "prettier" ];
         json = [ "prettier" ];
-        nix = [ "nixfmt" ];
+        nix = [ "alejandra" ];
       };
     };
   };

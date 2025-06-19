@@ -27,6 +27,7 @@
         action_palette.provider = "snacks";
         chat.window.opts.number = false;
       };
+      strategies.chat.slash_commands.file.opts.provider = "snacks";
       adapters.copilot.__raw = ''
         function()
           return require("codecompanion.adapters").extend("copilot", {
