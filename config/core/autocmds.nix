@@ -1,22 +1,20 @@
 {
-  autoGroups =
-    let
-      o.clear = true;
-    in
-    {
-      no_spell = o;
-      highlight_yank = o;
-      resize_splits = o;
-      format_options = o;
-      check_time = o;
-      man_unlisted = o;
-      mini_split = o;
-    };
+  autoGroups = let
+    o.clear = true;
+  in {
+    no_spell = o;
+    highlight_yank = o;
+    resize_splits = o;
+    format_options = o;
+    check_time = o;
+    man_unlisted = o;
+    mini_split = o;
+  };
 
   autoCmd = [
     {
       group = "no_spell";
-      event = [ "FileType" ];
+      event = ["FileType"];
       pattern = [
         "dap*"
         "json"
@@ -29,7 +27,7 @@
     }
     {
       group = "highlight_yank";
-      event = [ "TextYankPost" ];
+      event = ["TextYankPost"];
       callback.__raw = ''
         function()
           vim.highlight.on_yank()
@@ -38,7 +36,7 @@
     }
     {
       group = "resize_splits";
-      event = [ "VimResized" ];
+      event = ["VimResized"];
       callback.__raw = ''
         function()
           local current_tab = vim.fn.tabpagenr()
@@ -64,7 +62,7 @@
     }
     {
       group = "format_options";
-      event = [ "FileType" ];
+      event = ["FileType"];
       callback.__raw = ''
         function()
           vim.bo.formatoptions = vim.bo.formatoptions:gsub("[co]", "")
@@ -73,8 +71,8 @@
     }
     {
       group = "man_unlisted";
-      event = [ "FileType" ];
-      pattern = [ "man" ];
+      event = ["FileType"];
+      pattern = ["man"];
       callback.__raw = ''
         function(event)
           vim.bo[event.buf].buflisted = false
@@ -83,8 +81,8 @@
     }
     {
       group = "mini_split";
-      event = [ "User" ];
-      pattern = [ "MiniFilesBufferCreate" ];
+      event = ["User"];
+      pattern = ["MiniFilesBufferCreate"];
       callback.__raw = ''
         function(args)
           local map_split = function(buf_id, lhs, direction)

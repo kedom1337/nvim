@@ -6,17 +6,15 @@
     neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
     flake-utils.url = "github:numtide/flake-utils";
   };
-  outputs =
-    {
-      nixpkgs,
-      nixvim,
-      flake-utils,
-      neovim-nightly,
-      ...
-    }@inputs:
+  outputs = {
+    nixpkgs,
+    nixvim,
+    flake-utils,
+    neovim-nightly,
+    ...
+  } @ inputs:
     flake-utils.lib.eachDefaultSystem (
-      system:
-      let
+      system: let
         nvimConfig = {
           useNightly = false;
         };
@@ -36,15 +34,14 @@
             inherit inputs nvimConfig;
           };
         };
-      in
-      {
+      in {
         packages = {
           default = nixvim'.makeNixvimWithModule nixvimModule;
         };
         checks = {
           default = nixvimLib.check.mkTestDerivationFromNixvimModule nixvimModule;
         };
-        formatter = pkgs.nixfmt-rfc-style;
+        formatter = pkgs.alejandra;
       }
     );
 }

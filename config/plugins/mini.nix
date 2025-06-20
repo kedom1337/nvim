@@ -25,11 +25,11 @@
   plugins.mini = {
     enable = true;
     modules = {
-      surround = { };
-      pairs = { };
-      splitjoin = { };
-      move = { };
-      statusline = { };
+      surround = {};
+      pairs = {};
+      splitjoin = {};
+      move = {};
+      statusline = {};
       diff = {
         view.style = "sign";
       };

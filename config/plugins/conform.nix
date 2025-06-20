@@ -21,15 +21,15 @@
           "trim_newlines"
           "squeeze_blanks"
         ];
-        lua = [ "stylua" ];
-        python = [ "black" ];
-        rust = [ "rustfmt" ];
-        javascript = [ "prettier" ];
-        typescript = [ "prettier" ];
-        typescriptreact = [ "prettier" ];
-        astro = [ "prettier" ];
-        json = [ "prettier" ];
-        nix = [ "alejandra" ];
+        lua = ["stylua"];
+        python = ["black"];
+        rust = ["rustfmt"];
+        javascript = ["prettier"];
+        typescript = ["prettier"];
+        typescriptreact = ["prettier"];
+        astro = ["prettier"];
+        json = ["prettier"];
+        nix = ["alejandra"];
       };
     };
   };
