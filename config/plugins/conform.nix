@@ -1,4 +1,4 @@
-{
+{pkgs, ...}: {
   keymaps = [
     {
       mode = "n";
@@ -33,4 +33,12 @@
       };
     };
   };
+
+  extraPackages = with pkgs; [
+    stylua
+    black
+    rustfmt
+    prettier
+    alejandra
+  ];
 }
