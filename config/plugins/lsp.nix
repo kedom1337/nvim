@@ -18,6 +18,7 @@
       yamlls.enable = true;
       tailwindcss.enable = true;
       eslint.enable = true;
+      oxlint.enable = true;
       vtsls = {
         enable = true;
         settings = {
