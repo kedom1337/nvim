@@ -10,19 +10,21 @@
     }
   ];
 
-  plugins.lspconfig.enable = true;
-  lsp.servers = {
-    nixd.enable = true;
-    jsonls.enable = true;
-    yamlls.enable = true;
-    tailwindcss.enable = true;
-    eslint.enable = true;
-    vtsls = {
-      enable = true;
-      settings = {
-        typescript.tsserver.maxTsServerMemory = 12288;
-        vtsls.experimental.completion.enableServerSideFuzzyMatch = true;
-        vtsls.autoUseWorkspaceTsdk = true;
+  plugins.lsp = {
+    enable = true;
+    servers = {
+      nixd.enable = true;
+      jsonls.enable = true;
+      yamlls.enable = true;
+      tailwindcss.enable = true;
+      eslint.enable = true;
+      vtsls = {
+        enable = true;
+        settings = {
+          typescript.tsserver.maxTsServerMemory = 12288;
+          vtsls.experimental.completion.enableServerSideFuzzyMatch = true;
+          vtsls.autoUseWorkspaceTsdk = true;
+        };
       };
     };
   };
