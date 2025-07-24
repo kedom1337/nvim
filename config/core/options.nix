@@ -17,6 +17,7 @@
 
   opts = {
     number = true;
+    relativenumber = true;
     numberwidth = 2;
 
     cursorline = true;
