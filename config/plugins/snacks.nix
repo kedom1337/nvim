@@ -7,7 +7,7 @@
       ];
       key = "<a-i>";
       action.__raw = ''
-        function() Snacks.terminal.toggle("fish") end
+        function() Snacks.lazygit() end
       '';
       options.desc = "snacks: Toggle floating terminal";
     }
@@ -66,6 +66,7 @@
     settings = {
       bigfile.enabled = true;
       input.enabled = true;
+      lazygit.enabled = true;
       zen = {
         toggles.dim = false;
       };

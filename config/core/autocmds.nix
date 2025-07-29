@@ -2,7 +2,6 @@
   autoGroups = let
     o.clear = true;
   in {
-    no_spell = o;
     highlight_yank = o;
     resize_splits = o;
     format_options = o;
@@ -12,19 +11,6 @@
   };
 
   autoCmd = [
-    {
-      group = "no_spell";
-      event = ["FileType"];
-      pattern = [
-        "dap*"
-        "json"
-      ];
-      callback.__raw = ''
-        function()
-          vim.wo.spell = false
-        end
-      '';
-    }
     {
       group = "highlight_yank";
       event = ["TextYankPost"];

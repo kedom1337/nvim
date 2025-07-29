@@ -23,7 +23,6 @@
         enable = true;
         settings = {
           typescript.tsserver.maxTsServerMemory = 12288;
-          vtsls.experimental.completion.enableServerSideFuzzyMatch = true;
           vtsls.autoUseWorkspaceTsdk = true;
         };
       };

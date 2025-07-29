@@ -31,7 +31,6 @@
     wrap = false;
     scrolloff = 10;
     pumheight = 10;
-    smoothscroll = true;
 
     list = true;
     listchars = {
