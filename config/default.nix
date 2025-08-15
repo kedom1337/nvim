@@ -12,5 +12,4 @@
   vimAlias = true;
 
   luaLoader.enable = true;
-  performance.byteCompileLua.enable = true;
 }
