@@ -4,7 +4,10 @@
     settings = {
       keymap.preset = "enter";
       signature.enabled = true;
-      completion.documentation.auto_show = true;
+      completion = {
+        accept.auto_brackets.enabled = false;
+        documentation.auto_show = true;
+      };
     };
   };
 }
