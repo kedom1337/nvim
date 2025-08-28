@@ -19,6 +19,7 @@
       tailwindcss.enable = true;
       eslint.enable = true;
       oxlint.enable = true;
+      ocamllsp.enable = true;
       vtsls = {
         enable = true;
         settings = {
