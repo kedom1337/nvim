@@ -2,9 +2,15 @@
   keymaps = [
     {
       mode = "n";
-      key = "<leader>c";
-      action = ":Copilot toggle<cr>";
-      options.desc = "Toggle GitHub Copilot";
+      key = "<leader>cd";
+      action = ":Copilot disable<cr>";
+      options.desc = "Disable GitHub Copilot";
+    }
+    {
+      mode = "n";
+      key = "<leader>ce";
+      action = ":Copilot enable<cr>";
+      options.desc = "Enable GitHub Copilot";
     }
   ];
 
