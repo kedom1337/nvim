@@ -30,6 +30,7 @@
         astro = ["prettier"];
         json = ["prettier"];
         nix = ["alejandra"];
+        ocaml = ["ocamlformat"];
       };
     };
   };
@@ -40,5 +41,6 @@
     rustfmt
     prettier
     alejandra
+    ocamlformat
   ];
 }
