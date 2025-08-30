@@ -18,15 +18,12 @@
         nvimConfig = {
           useNightly = false;
         };
-
         pkgs = import nixpkgs {
           inherit system;
           overlays = nixpkgs.lib.optional nvimConfig.useNightly [
             neovim-nightly.overlays.default
           ];
         };
-        nixvimLib = nixvim.lib.${system};
-        nixvim' = nixvim.legacyPackages.${system};
         nixvimModule = {
           inherit system;
           module = import ./config;
@@ -36,10 +33,10 @@
         };
       in {
         packages = {
-          default = nixvim'.makeNixvimWithModule nixvimModule;
+          default = nixvim.legacyPackages.${system}.makeNixvimWithModule nixvimModule;
         };
         checks = {
-          default = nixvimLib.check.mkTestDerivationFromNixvimModule nixvimModule;
+          default = nixvim.lib.${system}.check.mkTestDerivationFromNixvimModule nixvimModule;
         };
         formatter = pkgs.alejandra;
       }

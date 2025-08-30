@@ -3,7 +3,6 @@
     ./core/autocmds.nix
     ./core/keymaps.nix
     ./core/options.nix
-
     ./plugins
   ];
 
