@@ -5,7 +5,7 @@
       key = "<leader>l";
       action.__raw = ''
         function()
-          require("conform").format()
+          require("conform").format({ async = true })
         end
       '';
       options.desc = "conform: Format current buffer";
@@ -21,8 +21,7 @@
           "trim_newlines"
           "squeeze_blanks"
         ];
-        lua = ["stylua"];
-        python = ["black"];
+        python = ["ruff_format"];
         rust = ["rustfmt"];
         javascript = ["prettier"];
         typescript = ["prettier"];
@@ -36,8 +35,7 @@
   };
 
   extraPackages = with pkgs; [
-    stylua
-    black
+    ruff
     rustfmt
     prettier
     alejandra

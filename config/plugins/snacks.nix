@@ -9,7 +9,7 @@
       action.__raw = ''
         function() Snacks.lazygit() end
       '';
-      options.desc = "snacks: Toggle floating terminal";
+      options.desc = "snacks: Toggle lazy git";
     }
     {
       mode = "n";

@@ -9,8 +9,6 @@
     ./conform.nix
     ./schemastore.nix
     ./markdown.nix
-    ./dap.nix
-    ./codecompanion.nix
   ];
 
   plugins = {
