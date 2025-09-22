@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{
   keymaps = [
     {
       mode = "n";
@@ -14,6 +14,7 @@
 
   plugins.conform-nvim = {
     enable = true;
+    autoInstall.enable = true;
     settings = {
       formatters_by_ft = {
         "_" = [
@@ -33,12 +34,4 @@
       };
     };
   };
-
-  extraPackages = with pkgs; [
-    ruff
-    rustfmt
-    prettier
-    alejandra
-    ocamlformat
-  ];
 }
