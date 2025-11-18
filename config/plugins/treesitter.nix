@@ -6,7 +6,7 @@
         indent.enable = true;
         highlight = {
           enable = true;
-          disable = ["Dockerfile"];
+          disable = ["dockerfile"];
         };
       };
     };
