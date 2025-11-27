@@ -2,25 +2,30 @@
   description = "A nixvim configuration";
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
-    nixvim.url = "github:nix-community/nixvim";
-    neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
     flake-utils.url = "github:numtide/flake-utils";
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    neovim-nightly = {
+      url = "github:nix-community/neovim-nightly-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs = {
     nixpkgs,
-    nixvim,
     flake-utils,
+    nixvim,
     neovim-nightly,
     ...
-  } @ inputs:
+  } @ inputs: let
+    useNightly = false;
+  in
     flake-utils.lib.eachDefaultSystem (
       system: let
-        nvimConfig = {
-          useNightly = false;
-        };
         pkgs = import nixpkgs {
           inherit system;
-          overlays = nixpkgs.lib.optional nvimConfig.useNightly [
+          overlays = nixpkgs.lib.optional useNightly [
             neovim-nightly.overlays.default
           ];
         };
@@ -28,7 +33,7 @@
           inherit system;
           module = import ./config;
           extraSpecialArgs = {
-            inherit inputs nvimConfig;
+            inherit inputs;
           };
         };
       in {
