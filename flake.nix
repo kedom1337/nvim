@@ -44,6 +44,13 @@
     }: {
       default = inputs.nixvim.lib.${system}.check.mkTestDerivationFromNixvimModule (nixvimModule pkgs);
     });
+    devShells = eachSupportedSystem ({pkgs, ...}: {
+      default = pkgs.mkShell {
+        packages = with pkgs; [
+          statix
+        ];
+      };
+    });
     formatter = eachSupportedSystem ({pkgs, ...}: pkgs.alejandra);
   };
 }
