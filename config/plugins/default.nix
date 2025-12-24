@@ -7,8 +7,6 @@
     ./copilot.nix
     ./snacks.nix
     ./conform.nix
-    ./schemastore.nix
-    ./markdown.nix
   ];
 
   plugins = {
@@ -16,5 +14,7 @@
     fidget.enable = true;
     highlight-colors.enable = true;
     web-devicons.enable = true;
+    render-markdown.enable = true;
+    schemastore .enable = true;
   };
 }
