@@ -2,7 +2,6 @@
   description = "A nixvim configuration";
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
-    flake-utils.url = "github:numtide/flake-utils";
     nixvim = {
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -12,38 +11,39 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = {
-    nixpkgs,
-    flake-utils,
-    nixvim,
-    neovim-nightly,
-    ...
-  } @ inputs: let
+  outputs = {nixpkgs, ...} @ inputs: let
     useNightly = false;
-  in
-    flake-utils.lib.eachDefaultSystem (
-      system: let
-        pkgs = import nixpkgs {
+    eachSupportedSystem = f:
+      nixpkgs.lib.genAttrs nixpkgs.lib.systems.flakeExposed (system:
+        f {
           inherit system;
-          overlays = nixpkgs.lib.optional useNightly [
-            neovim-nightly.overlays.default
-          ];
-        };
-        nixvimModule = {
-          inherit system;
-          module = import ./config;
-          extraSpecialArgs = {
-            inherit inputs;
+          pkgs = import nixpkgs {
+            inherit system;
+            overlays = nixpkgs.lib.optional useNightly [
+              inputs.neovim-nightly.overlays.default
+            ];
           };
-        };
-      in {
-        packages = {
-          default = nixvim.legacyPackages.${system}.makeNixvimWithModule nixvimModule;
-        };
-        checks = {
-          default = nixvim.lib.${system}.check.mkTestDerivationFromNixvimModule nixvimModule;
-        };
-        formatter = pkgs.alejandra;
-      }
-    );
+        });
+    nixvimModule = pkgs: {
+      inherit pkgs;
+      module = ./config;
+      extraSpecialArgs = {
+        inherit inputs;
+      };
+    };
+  in {
+    packages = eachSupportedSystem ({
+      pkgs,
+      system,
+    }: {
+      default = inputs.nixvim.legacyPackages.${system}.makeNixvimWithModule (nixvimModule pkgs);
+    });
+    checks = eachSupportedSystem ({
+      pkgs,
+      system,
+    }: {
+      default = inputs.nixvim.lib.${system}.check.mkTestDerivationFromNixvimModule (nixvimModule pkgs);
+    });
+    formatter = eachSupportedSystem ({pkgs, ...}: pkgs.alejandra);
+  };
 }
