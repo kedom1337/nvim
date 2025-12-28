@@ -29,6 +29,7 @@
         typescriptreact = ["prettier"];
         astro = ["prettier"];
         json = ["prettier"];
+        yaml = ["prettier"];
         nix = ["alejandra"];
         ocaml = ["ocamlformat"];
       };
