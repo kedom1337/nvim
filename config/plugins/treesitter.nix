@@ -1,15 +1,8 @@
 {
-  plugins = {
-    treesitter = {
-      enable = true;
-      settings = {
-        indent.enable = true;
-        highlight = {
-          enable = true;
-          disable = ["dockerfile"];
-        };
-      };
-    };
-    treesitter-textobjects.enable = true;
+  plugins.treesitter = {
+    enable = true;
+    highlight.enable = true;
+    indent.enable = true;
+    folding.enable = true;
   };
 }

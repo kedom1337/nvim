@@ -47,20 +47,6 @@
       };
       ai = {
         silent = true;
-        custom_textobjects = {
-          f.__raw = ''
-            require('mini.ai').gen_spec.treesitter({
-              a = { "@function.outer" };
-              i = { "@function.inner" };
-            })
-          '';
-          o.__raw = ''
-            require('mini.ai').gen_spec.treesitter({
-              a = { '@conditional.outer', '@loop.outer' },
-              i = { '@conditional.inner', '@loop.inner' },
-            })
-          '';
-        };
       };
     };
   };
