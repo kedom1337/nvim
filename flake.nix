@@ -19,7 +19,7 @@
           inherit system;
           pkgs = import nixpkgs {
             inherit system;
-            overlays = nixpkgs.lib.optional useNightly [
+            overlays = nixpkgs.lib.optionals useNightly [
               inputs.neovim-nightly.overlays.default
             ];
           };
