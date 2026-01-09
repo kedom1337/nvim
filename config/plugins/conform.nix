@@ -24,12 +24,12 @@
         ];
         python = ["ruff_format"];
         rust = ["rustfmt"];
-        javascript = ["prettier"];
-        typescript = ["prettier"];
-        typescriptreact = ["prettier"];
-        astro = ["prettier"];
-        json = ["prettier"];
-        yaml = ["prettier"];
+        javascript = ["prettier" "oxfmt"];
+        typescript = ["prettier" "oxfmt"];
+        typescriptreact = ["prettier" "oxfmt"];
+        astro = ["prettier" "oxfmt"];
+        json = ["prettier" "oxfmt"];
+        yaml = ["prettier" "oxfmt"];
         nix = ["alejandra"];
         ocaml = ["ocamlformat"];
       };
