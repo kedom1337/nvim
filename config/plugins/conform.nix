@@ -16,12 +16,14 @@
     enable = true;
     autoInstall.enable = true;
     settings = {
+      stop_after_first = true;
       formatters_by_ft = {
-        "_" = [
-          "trim_whitespace"
-          "trim_newlines"
-          "squeeze_blanks"
-        ];
+        "_" = {
+          __unkeyed-1 = "trim_whitespace";
+          __unkeyed-2 = "trim_newlines";
+          __unkeyed-3 = "squeeze_blanks";
+          stop_after_first = false;
+        };
         python = ["ruff_format"];
         rust = ["rustfmt"];
         javascript = ["prettier" "oxfmt"];
