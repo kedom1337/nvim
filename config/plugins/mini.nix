@@ -1,9 +1,9 @@
-{
+{lib, ...}: {
   keymaps = [
     {
       mode = "n";
       key = "<leader>e";
-      action.__raw = ''
+      action = lib.nixvim.mkRaw ''
         function()
           MiniFiles.open(vim.api.nvim_buf_get_name(0))
         end
@@ -13,7 +13,7 @@
     {
       mode = "n";
       key = "<leader>re";
-      action.__raw = ''
+      action = lib.nixvim.mkRaw ''
         function()
           MiniFiles.open()
         end
@@ -41,7 +41,7 @@
         silent = true;
         allowed_lines.cursor_at = false;
         view.n_steps_ahead = 2;
-        spotter.__raw = ''
+        spotter = lib.nixvim.mkRaw ''
           require('mini.jump2d').builtin_opts.word_start.spotter
         '';
       };

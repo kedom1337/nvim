@@ -1,4 +1,4 @@
-{
+{lib, ...}: {
   autoGroups = let
     o.clear = true;
   in {
@@ -14,7 +14,7 @@
     {
       group = "highlight_yank";
       event = ["TextYankPost"];
-      callback.__raw = ''
+      callback = lib.nixvim.mkRaw ''
         function()
           vim.highlight.on_yank()
         end
@@ -23,7 +23,7 @@
     {
       group = "resize_splits";
       event = ["VimResized"];
-      callback.__raw = ''
+      callback = lib.nixvim.mkRaw ''
         function()
           local current_tab = vim.fn.tabpagenr()
           vim.cmd("tabdo wincmd =")
@@ -38,7 +38,7 @@
         "TermClose"
         "TermLeave"
       ];
-      callback.__raw = ''
+      callback = lib.nixvim.mkRaw ''
         function()
           if vim.o.buftype ~= "nofile" then
             vim.cmd("checktime")
@@ -49,7 +49,7 @@
     {
       group = "format_options";
       event = ["FileType"];
-      callback.__raw = ''
+      callback = lib.nixvim.mkRaw ''
         function()
           vim.bo.formatoptions = vim.bo.formatoptions:gsub("[co]", "")
         end
@@ -59,7 +59,7 @@
       group = "man_unlisted";
       event = ["FileType"];
       pattern = ["man"];
-      callback.__raw = ''
+      callback = lib.nixvim.mkRaw ''
         function(event)
           vim.bo[event.buf].buflisted = false
         end
@@ -69,7 +69,7 @@
       group = "mini_split";
       event = ["User"];
       pattern = ["MiniFilesBufferCreate"];
-      callback.__raw = ''
+      callback = lib.nixvim.mkRaw ''
         function(args)
           local map_split = function(buf_id, lhs, direction)
             local rhs = function()

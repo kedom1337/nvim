@@ -1,9 +1,9 @@
-{
+{lib, ...}: {
   keymaps = [
     {
       mode = "n";
       key = "<leader>i";
-      action.__raw = ''
+      action = lib.nixvim.mkRaw ''
         vim.diagnostic.open_float
       '';
       options.desc = "Show diagnostics under cursor";
@@ -11,7 +11,7 @@
     {
       mode = "n";
       key = "<leader>ttl";
-      action.__raw = ''
+      action = lib.nixvim.mkRaw ''
         function()
           local tsgo_clients = vim.lsp.get_clients({ name = 'tsgo' })
           local vtsls_clients = vim.lsp.get_clients({ name = 'vtsls' })
