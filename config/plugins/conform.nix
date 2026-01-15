@@ -16,7 +16,9 @@
     enable = true;
     autoInstall.enable = true;
     settings = {
-      stop_after_first = true;
+      default_format_opts = {
+        stop_after_first = true;
+      };
       formatters_by_ft = {
         "_" =
           lib.nixvim.listToUnkeyedAttrs [
