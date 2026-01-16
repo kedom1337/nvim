@@ -43,7 +43,6 @@
     dockerls.enable = true;
     helm_ls.enable = true;
     tofu_ls.enable = true;
-    terraformls.enable = true;
     tsgo.enable = true;
     vtsls = {
       enable = true;
