@@ -34,6 +34,7 @@
         typescriptreact = ["prettier" "oxfmt"];
         astro = ["prettier" "oxfmt"];
         json = ["prettier" "oxfmt"];
+        json5 = ["prettier" "oxfmt"];
         yaml = ["prettier" "oxfmt"];
         nix = ["alejandra"];
         ocaml = ["ocamlformat"];
