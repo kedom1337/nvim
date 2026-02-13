@@ -43,6 +43,7 @@
     dockerls.enable = true;
     helm_ls.enable = true;
     tofu_ls.enable = true;
+    astro.enable = true;
     tsgo.enable = true;
     vtsls = {
       enable = true;
