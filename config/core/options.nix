@@ -1,10 +1,14 @@
 {
+  viAlias = true;
+  vimAlias = true;
+
+  performance.byteCompileLua.enable = true;
+
   withNodeJs = false;
   withPerl = false;
   withPython3 = false;
   withRuby = false;
 
-  clipboard.providers.xclip.enable = true;
   colorschemes.nightfox = {
     enable = true;
     flavor = "carbonfox";
