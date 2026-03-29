@@ -12,7 +12,7 @@
     };
   };
   outputs = {nixpkgs, ...} @ inputs: let
-    useNightly = false;
+    useNightly = true;
     eachSupportedSystem = f:
       nixpkgs.lib.genAttrs nixpkgs.lib.systems.flakeExposed (system:
         f {
