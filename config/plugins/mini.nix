@@ -45,9 +45,6 @@
           require('mini.jump2d').builtin_opts.word_start.spotter
         '';
       };
-      ai = {
-        silent = true;
-      };
     };
   };
 }
