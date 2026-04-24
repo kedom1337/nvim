@@ -16,7 +16,6 @@
     jsonls.enable = true;
     yamlls.enable = true;
     tailwindcss.enable = true;
-    oxlint.enable = true;
     dockerls.enable = true;
     helm_ls.enable = true;
     tofu_ls.enable = true;
