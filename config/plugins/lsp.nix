@@ -8,6 +8,17 @@
       '';
       options.desc = "Show diagnostics under cursor";
     }
+    {
+      mode = "n";
+      key = "<leader>rl";
+      action = lib.nixvim.mkRaw ''
+        function()
+          vim.cmd("lsp restart")
+          vim.cmd("bufdo e")
+        end
+      '';
+      options.desc = "Restart LSP and reload all buffers";
+    }
   ];
 
   plugins.lspconfig.enable = true;
