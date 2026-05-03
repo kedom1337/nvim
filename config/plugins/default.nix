@@ -13,7 +13,6 @@
   plugins = {
     ts-autotag.enable = true;
     fidget.enable = true;
-    highlight-colors.enable = true;
     web-devicons.enable = true;
     render-markdown.enable = true;
   };
