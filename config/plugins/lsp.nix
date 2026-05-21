@@ -34,6 +34,7 @@
     dockerls.enable = true;
     helm_ls.enable = true;
     tofu_ls.enable = true;
+    rust_analyzer.enable = true;
     astro = {
       enable = true;
       # The Nix astro-language-server package does not expose TypeScript in
